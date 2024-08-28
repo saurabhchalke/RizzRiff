@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ImmersiveDebuggerSettings
   m_EditorClassIdentifier: 
   debugTypes: []
-  immersiveDebuggerEnabled: 0
+  immersiveDebuggerEnabled: 1
   immersiveDebuggerDisplayAtStartup: 0
   immersiveDebuggerToggleDisplayButton: 2
   showInspectors: 0
@@ -31,7 +31,9 @@ MonoBehaviour:
   panelLayer: 20
   meshRendererLayer: 21
   overlayDepth: 10
-  inspectedDataEnabled: 
-  inspectedDataAssets: []
+  inspectedDataEnabled: 0101
+  inspectedDataAssets:
+  - {fileID: 11400000, guid: 7d2b5c7a7c5e53542ab61e3e1f5a2785, type: 2}
+  - {fileID: 11400000, guid: 168f7a776bb65884397aab8376e40c7d, type: 2}
   useCustomIntegrationConfig: 0
   customIntegrationConfigClassName: 
