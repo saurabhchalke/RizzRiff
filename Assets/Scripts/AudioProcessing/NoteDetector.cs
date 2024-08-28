@@ -40,7 +40,7 @@ public class NoteDetector : MonoBehaviour
 
     [Header("Microphone Settings")]
     [SerializeField] private string selectedMicrophone;
-    [SerializeField] private float volumeThreshold = 0.01f;
+    [SerializeField] private float volumeThreshold = 0.002f;
 
     public Dictionary<int, string> noteNames = new Dictionary<int, string>
     {
@@ -157,7 +157,7 @@ public class NoteDetector : MonoBehaviour
         DetectNote(randomFrequency);
     }
 
-    private void DetectNote(float frequency)
+    public void DetectNote(float frequency)
     {
         for (int i = 0; i < guitarStrings.Length; i++)
         {

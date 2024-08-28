@@ -48,18 +48,6 @@ public class GuitarTuner : MonoBehaviour
     private Vector3 fretboardDirection;
     private float dialYOffset;
 
-    private PitchDetector pitchDetector;
-    private int bufferSize = 4096;
-    private int sampleRate;
-    private float[] audioBuffer;
-    private AudioClip microphoneClip;
-    private bool isListening = false;
-
-    [Header("Simulation Settings")]
-    [SerializeField] private bool enableSimulation = false;
-    [SerializeField] private float simulationInterval = 1f;
-    private float lastSimulationTime;
-
     private void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -67,10 +55,6 @@ public class GuitarTuner : MonoBehaviour
         CalculateFretboardDirection();
         if (dialPrefab != null) dialPrefab.SetActive(false);
         dialYOffset = dialPrefab.transform.position.y - dialPivot.position.y;
-
-        sampleRate = AudioSettings.outputSampleRate;
-        audioBuffer = new float[bufferSize];
-        pitchDetector = new PitchDetector(bufferSize, sampleRate);
 
         StartTuningProcess();
     }
@@ -98,10 +82,6 @@ public class GuitarTuner : MonoBehaviour
     {
         currentStringIndex = 0;
         CreateDialForCurrentString();
-        if (!enableSimulation)
-        {
-            StartListening();
-        }
     }
 
     private void CreateDialForCurrentString()
@@ -188,67 +168,6 @@ public class GuitarTuner : MonoBehaviour
         else
         {
             Debug.Log("All strings are tuned!");
-            StopListening();
         }
-    }
-
-    private void StartListening()
-    {
-        if (Microphone.devices.Length == 0)
-        {
-            Debug.LogError("No microphone detected!");
-            return;
-        }
-
-        microphoneClip = Microphone.Start(null, true, 1, sampleRate);
-        isListening = true;
-    }
-
-    private void StopListening()
-    {
-        if (isListening)
-        {
-            Microphone.End(null);
-            isListening = false;
-        }
-    }
-
-    private void Update()
-    {
-        if (enableSimulation)
-        {
-            SimulateFrequencyDetection();
-        }
-        else if (isListening)
-        {
-            int pos = Microphone.GetPosition(null);
-            if (pos < bufferSize) return;
-
-            microphoneClip.GetData(audioBuffer, pos - bufferSize);
-            float frequency = pitchDetector.DetectPitch(audioBuffer);
-            Debug.Log($"Detected frequency: {frequency} Hz");
-
-            if (frequency > 0)
-            {
-                ProcessFrequency(frequency);
-            }
-        }
-    }
-
-    [Button("Simulate String Pluck")]
-    private void SimulateFrequencyDetection()
-    {
-        if (Time.time - lastSimulationTime < simulationInterval) return;
-
-        lastSimulationTime = Time.time;
-        if (currentStringIndex >= strings.Length) return;
-
-        float simulatedFrequency = strings[currentStringIndex].frequency * Random.Range(0.9f, 1.1f);
-        ProcessFrequency(simulatedFrequency);
-    }
-
-    private void OnDisable()
-    {
-        StopListening();
     }
 }
