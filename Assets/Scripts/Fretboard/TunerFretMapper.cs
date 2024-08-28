@@ -14,6 +14,7 @@ public class TunerFretMapper : MonoBehaviour
     public string fretTag = "Fret";
     public int desiredFretCount = 5;
     public bool enableLogging = false;
+    public float fretOffset = 0.22f;
 
     public Vector3 StartPoint { get; private set; }
     public Vector3 EndPoint { get; private set; }
@@ -84,7 +85,8 @@ public class TunerFretMapper : MonoBehaviour
 
     void SpawnFret(GameObject prefab, Vector3 position, string namePrefix, int fretNumber)
     {
-        GameObject fret = Instantiate(prefab, position, fretRotation, transform);
+        Vector3 offsetPosition = position + Vector3.up * fretOffset;
+        GameObject fret = Instantiate(prefab, offsetPosition, fretRotation, transform);
         FretData fretData = fret.GetComponent<FretData>();
 
         if (fretData == null)
@@ -99,7 +101,7 @@ public class TunerFretMapper : MonoBehaviour
 
         if (enableLogging)
         {
-            Debug.Log($"Spawned {fret.name} at {position} with fretNumber {fretNumber}");
+            Debug.Log($"Spawned {fret.name} at {offsetPosition} with fretNumber {fretNumber}");
         }
     }
 
