@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d75bea1662418ab5f9e0c22110bc09, type: 3}
   m_Name: ImmersiveDebuggerSettings
   m_EditorClassIdentifier: 
-  debugTypes: []
+  debugTypes:
+  - AssemblyName: Meta.XR.ImmersiveDebugger
+    DebugTypes:
+    - TestSceneUsage
+    - UIEditorSetup
   immersiveDebuggerEnabled: 1
   immersiveDebuggerDisplayAtStartup: 0
   immersiveDebuggerToggleDisplayButton: 2

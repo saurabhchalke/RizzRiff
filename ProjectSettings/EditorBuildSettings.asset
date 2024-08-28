@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Hack/HackTuner.unity
+    guid: de702c7da112549a88735c9df90889ac
+  - enabled: 1
+    path: Assets/Scenes/Hack/HackGame.unity
+    guid: 621e08f74b8ab4fc6896a3bd31f7002c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: da3da81945b3541d59ab1ec9a36f0c0c,
       type: 2}
