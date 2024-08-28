@@ -11,9 +11,18 @@
     </activity>
     <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="false" />
     <meta-data android:name="com.samsung.android.vr.application.mode" android:value="vr_only" />
-    <meta-data android:name="com.oculus.ossplash.background" android:value="black" />
-    <meta-data android:name="com.oculus.telemetry.project_guid" android:value="aa8acaa1-e06e-45b8-947f-92e1f7b15dd0" />
-    <meta-data android:name="com.oculus.supportedDevices" android:value="quest|quest2|questpro|eureka" tools:replace="android:value" />
+    <meta-data android:name="com.oculus.ossplash.background" android:value="passthrough-contextual" />
+    <meta-data android:name="com.oculus.telemetry.project_guid" android:value="ade637b1-e622-4368-9bed-1ed67938df76" />
+    <meta-data android:name="com.oculus.supportedDevices" android:value="quest2|questpro|eureka" tools:replace="android:value" />
+    <meta-data android:name="com.oculus.handtracking.frequency" android:value="LOW" />
+    <meta-data android:name="com.oculus.handtracking.version" android:value="V2.0" />
   </application>
   <uses-feature android:name="android.hardware.vr.headtracking" android:version="1" android:required="true" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-feature android:name="oculus.software.handtracking" android:required="false" />
+  <uses-permission android:name="com.oculus.permission.HAND_TRACKING" />
+  <uses-permission android:name="com.oculus.permission.USE_ANCHOR_API" />
+  <uses-feature android:name="com.oculus.feature.PASSTHROUGH" android:required="false" />
+  <uses-permission android:name="com.oculus.permission.USE_SCENE" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
 </manifest>

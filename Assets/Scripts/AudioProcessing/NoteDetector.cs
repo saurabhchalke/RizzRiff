@@ -40,7 +40,7 @@ public class NoteDetector : MonoBehaviour
 
     [Header("Microphone Settings")]
     [SerializeField] private string selectedMicrophone;
-    [SerializeField] private float volumeThreshold = 0.002f;
+    [SerializeField] private float volumeThreshold = 0.0002f;
 
     public Dictionary<int, string> noteNames = new Dictionary<int, string>
     {
