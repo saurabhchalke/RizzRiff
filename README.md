@@ -29,7 +29,7 @@ RizzRiff is an interactive application designed to help guitarists of all levels
 
 ## Demo Video
 
-[Insert your demo video here]
+https://github.com/user-attachments/assets/8753c4e2-c0e1-4713-b3ae-bdc229dd1d2f
 
 ## Installation
 
