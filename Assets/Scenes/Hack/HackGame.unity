@@ -31271,7 +31271,7 @@ MonoBehaviour:
   bottomRightCorner: {fileID: 860806691}
   fretPrefab: {fileID: 1306723637}
   beatFretPrefab: {fileID: 893797762}
-  moveSpeed: 3
+  moveSpeed: 2.5
   fretTag: Fret
   desiredFretCount: 5
   enableLogging: 1
@@ -31312,8 +31312,8 @@ MonoBehaviour:
   timingThreshold: 0.1
   fretLocationIndicatorPrefab: {fileID: 3075614751217111828, guid: 96688a5e6e8564dabab6d823a2320f9c,
     type: 3}
-  indicatorOffset: 1.2
-  indicatorScaleMultiplier: 0.4
+  indicatorOffset: 0.69
+  indicatorScaleMultiplier: 0.2
   loopMode: 0
   availableScales:
   - default
