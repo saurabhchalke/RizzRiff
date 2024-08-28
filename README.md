@@ -2,7 +2,7 @@
 
 RizzRiff is an interactive application designed to help guitarists of all levels improve their playing skills. This Unity-based project combines real-time pitch detection, visual fretboard representation, and gamified learning to create an engaging and effective guitar practice experience.
 
-![RizzRiff Demo](placeholder-for-demo-gif.gif)
+![RizzRiff Demo](Documentation/Images/gameplay.gif)
 
 ## Table of Contents
 - [RizzRiff](#rizzriff)
